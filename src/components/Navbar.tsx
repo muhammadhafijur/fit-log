@@ -30,7 +30,7 @@ export function Navbar() {
             <Image src="/logo.png" width={24} height={24} alt="logo" />
           </div>
 
-          <span className="font-[family-name:var(--font-display)] text-2xl font-bold tracking-wide">
+          <span className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold tracking-wide">
             FITLOG
           </span>
         </Link>
@@ -62,10 +62,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           {/* Desktop counters */}
-          <div className="hidden items-center gap-2 sm:flex">
+          <div className="items-center gap-2 flex">
             <Link
               href="/my-plan?tab=plan"
-              className="flex items-center gap-2 border border-zinc-600 px-3 py-2 text-xs font-black uppercase text-white focus:border-[#ccff00] focus:bg-[#ccff00] focus:text-black"
+              className="flex items-center gap-2 sm:border border-zinc-600 sm:px-3 sm:py-2 text-xs font-black uppercase text-white focus:border-[#ccff00] focus:bg-[#ccff00] focus:text-black"
             >
               <span>Plan</span>
               <span>{planCount}</span>
@@ -73,7 +73,7 @@ export function Navbar() {
 
             <Link
               href="/my-plan?tab=saved"
-              className="flex items-center gap-2 border border-zinc-600 px-3 py-2 text-xs font-black uppercase text-white focus:border-[#ccff00] focus:bg-[#ccff00] focus:text-black"
+              className="flex items-center gap-2 sm:border border-zinc-600 sm:px-3 sm:py-2 text-xs font-black uppercase text-white focus:border-[#ccff00] focus:bg-[#ccff00] focus:text-black"
             >
               <span>Saved</span>
               <span>{savedCount}</span>
@@ -86,7 +86,7 @@ export function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="flex size-10 items-center justify-center border border-zinc-700 text-white transition hover:border-zinc-400 md:hidden"
+            className="flex size-9 sm:size-10 items-center justify-center border border-zinc-700 text-white transition hover:border-zinc-400 md:hidden"
           >
             <span className="flex w-5 flex-col gap-1.5">
               <span
@@ -147,7 +147,7 @@ export function Navbar() {
             <Link
               href="/my-plan?tab=plan"
               onClick={closeMenu}
-              className="flex flex-1 items-center justify-between bg-[#ccff00] px-3 py-3 text-xs font-black uppercase text-black"
+              className="flex flex-1 items-center justify-between bg-[#ccff00] px-2 sm:px-3 py-3 text-xs font-black uppercase text-black"
             >
               <span>Plan</span>
               <span>{planCount}</span>
@@ -156,7 +156,7 @@ export function Navbar() {
             <Link
               href="/my-plan?tab=saved"
               onClick={closeMenu}
-              className="flex flex-1 items-center justify-between border border-zinc-600 px-3 py-3 text-xs font-black uppercase text-white"
+              className="flex flex-1 items-center justify-between border border-zinc-600 px-2 sm:px-3 py-3 text-xs font-black uppercase text-white"
             >
               <span>Saved</span>
               <span>{savedCount}</span>

@@ -2,11 +2,10 @@
 import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 
-import { AppProvider } from "@/components/app-provider";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import "./globals.css";
 import { PlanProvider } from "./context/PlanContext";
+import "./globals.css";
 // import { Navbar } from "@/components/navbar";
 // import { Footer } from "@/components/footer";
 
@@ -23,6 +22,9 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "FitLog — Workout Library",
   description: "Train with intent. Log every set.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
