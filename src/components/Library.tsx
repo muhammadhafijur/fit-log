@@ -1,6 +1,8 @@
 // import { getWorkouts } from "@/lib/api";
 
-import { getWorkouts } from "../app/lib/api";
+import { getWorkouts } from "@/lib/api";
+
+// import { getWorkouts } from "../app/lib/api";
 
 export default async function Library() {
   const workouts = await getWorkouts();

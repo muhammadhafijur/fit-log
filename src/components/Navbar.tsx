@@ -4,14 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { usePlan } from "@/app/context/PlanContext";
 import Image from "next/image";
-import { useApp } from "./app-provider";
 
 export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { planCount, savedCount } = useApp();
+  const { planCount, savedCount } = usePlan();
 
   const workoutActive = pathname === "/";
   const planActive = pathname.startsWith("/my-plan");
@@ -60,16 +60,16 @@ export function Navbar() {
           {/* Desktop counters */}
           <div className="hidden items-center gap-2 sm:flex">
             <Link
-              href="/my-plan"
-              className="flex items-center gap-2 bg-[#ccff00] px-3 py-2 text-xs font-black uppercase text-black"
+              href="my-plan?tab=plan"
+              className="flex items-center gap-2 border focus:focus:bg-[#ccff00] focus:text-black focus:border-[#ccff00]  border-zinc-600 px-3 py-2 text-xs font-black uppercase text-white"
             >
               <span>Plan</span>
               <span>{planCount}</span>
             </Link>
 
             <Link
-              href="/my-plan"
-              className="flex items-center gap-2 border border-zinc-600 px-3 py-2 text-xs font-black uppercase text-white"
+              href="my-plan?tab=saved"
+              className="flex items-center gap-2 border focus:focus:bg-[#ccff00] focus:text-black focus:border-[#ccff00]  border-zinc-600 px-3 py-2 text-xs font-black uppercase text-white"
             >
               <span>Saved</span>
               <span>{savedCount}</span>
@@ -139,7 +139,7 @@ export function Navbar() {
           {/* Mobile counters */}
           <div className="flex gap-2 p-4 sm:hidden">
             <Link
-              href="/my-plan"
+              href="/my-plan?tab=plan"
               onClick={closeMenu}
               className="flex flex-1 items-center justify-between bg-[#ccff00] px-3 py-3 text-xs font-black uppercase text-black"
             >
@@ -148,7 +148,7 @@ export function Navbar() {
             </Link>
 
             <Link
-              href="/my-plan"
+              href="/my-plan?tab=saved"
               onClick={closeMenu}
               className="flex flex-1 items-center justify-between border border-zinc-600 px-3 py-3 text-xs font-black uppercase text-white"
             >

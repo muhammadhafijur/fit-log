@@ -6,6 +6,7 @@ import { AppProvider } from "@/components/app-provider";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import "./globals.css";
+import { PlanProvider } from "./context/PlanContext";
 // import { Navbar } from "@/components/navbar";
 // import { Footer } from "@/components/footer";
 
@@ -34,13 +35,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${oswald.variable} bg-black text-white antialiased`}
       >
-        <AppProvider>
+        <PlanProvider>
           <Navbar />
 
           <main>{children}</main>
 
           <Footer />
-        </AppProvider>
+        </PlanProvider>
       </body>
     </html>
   );

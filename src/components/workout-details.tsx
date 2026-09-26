@@ -8,11 +8,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { usePlan } from "@/app/context/PlanContext";
 import { Workout } from "@/types/workout";
-import { useApp } from "./app-provider";
 
 export function WorkoutDetails({ workout }: { workout: Workout }) {
-  const { plan, saved, addToPlan, saveForLater } = useApp();
+  const { plan, saved, addToPlan, saveForLater } = usePlan();
 
   const alreadyInPlan = plan.some((item) => item.id === workout.id);
   const alreadySaved = saved.some((item) => item.id === workout.id);
