@@ -4,6 +4,7 @@ import { Check, Flame, Star, Timer, X } from "lucide-react";
 import Link from "next/link";
 
 import { PlanWorkout, Workout } from "@/types/workout";
+import Image from "next/image";
 
 interface PlanCardProps {
   workout: PlanWorkout | Workout;
@@ -26,9 +27,11 @@ export function PlanCard({
         completed ? "border-[#ccff00]/40" : "border-zinc-800"
       }`}
     >
-      <img
+      <Image
         src={workout.image}
         alt={workout.name}
+        width={800}
+        height={400}
         className="h-44 w-full object-cover grayscale sm:h-full"
       />
 

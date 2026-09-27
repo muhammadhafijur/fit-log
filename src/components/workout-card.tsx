@@ -2,6 +2,7 @@ import { Flame, Star, Timer } from "lucide-react";
 import Link from "next/link";
 
 import { Workout } from "@/types/workout";
+import Image from "next/image";
 
 interface WorkoutCardProps {
   workout: Workout;
@@ -14,9 +15,11 @@ export function WorkoutCard({ workout }: WorkoutCardProps) {
       className="group block overflow-hidden border border-zinc-800 bg-zinc-950 transition hover:border-[#ccff00]"
     >
       <div className="relative overflow-hidden bg-zinc-900">
-        <img
+        <Image
           src={workout.image}
           alt={workout.name}
+          width={800}
+          height={500}
           className="h-64 w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
         />
       </div>

@@ -1,15 +1,11 @@
 "use client";
 
-import {
-    ArrowLeft,
-    Bookmark,
-    Check,
-    Plus
-} from "lucide-react";
+import { ArrowLeft, Bookmark, Check, Plus } from "lucide-react";
 import Link from "next/link";
 
 import { usePlan } from "@/app/context/PlanContext";
 import { Workout } from "@/types/workout";
+import Image from "next/image";
 
 export function WorkoutDetails({ workout }: { workout: Workout }) {
   const { plan, saved, addToPlan, saveForLater } = usePlan();
@@ -30,9 +26,11 @@ export function WorkoutDetails({ workout }: { workout: Workout }) {
 
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="h-fit overflow-hidden border border-zinc-800 bg-zinc-950 lg:sticky lg:top-28">
-          <img
+          <Image
             src={workout.image}
             alt={workout.name}
+            width={800}
+            height={800}
             className="aspect-square w-full object-cover grayscale"
           />
         </div>
@@ -69,10 +67,7 @@ export function WorkoutDetails({ workout }: { workout: Workout }) {
               <SpecRow label="Difficulty" value={workout.difficulty} />
               <SpecRow label="Sets" value={String(workout.sets)} />
               <SpecRow label="Reps" value={workout.reps} />
-              <SpecRow
-                label="Duration"
-                value={`${workout.duration} min`}
-              />
+              <SpecRow label="Duration" value={`${workout.duration} min`} />
               <SpecRow
                 label="Calories"
                 value={`${workout.caloriesBurned} kcal`}
